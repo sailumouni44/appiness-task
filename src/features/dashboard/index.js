@@ -4,7 +4,6 @@ import { getUsers } from "./_dashboardSlice";
 
 const DashboardFeature = () => {
   const users = useSelector(getUsers);
-  console.log("--== ** dashbaord ", users);
   return (
     <div className="container-fluid h-100">
       <div className="d-flex justify-content-center align-items-center h-100">

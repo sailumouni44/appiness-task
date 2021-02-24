@@ -5,11 +5,9 @@ import { validateAsync, findIsAuthenticated } from "./_loginSlice";
 
 const LoginFeature = (props) => {
   const { isAuthenticated, message } = useSelector(findIsAuthenticated);
-  console.log("--== ** login ", isAuthenticated);
   const dispatch = useDispatch();
   React.useEffect(() => {
     if (isAuthenticated) {
-      console.log("--== ** move to dashboard ", props);
       const { history } = props;
       history.push("/dashboard");
     }
@@ -18,7 +16,7 @@ const LoginFeature = (props) => {
     <React.Fragment>
       <div className="d-flex flex-column h-100 align-items-center justify-content-center">
         <Formik
-          initialValues={{ email: "hruday@gmail.com", password: "hruday123" }}
+          initialValues={{ email: "", password: "" }}
           validate={(values) => {
             const errors = {};
             if (!values.email) {
